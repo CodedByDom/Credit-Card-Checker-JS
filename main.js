@@ -58,14 +58,14 @@ const validateCred = array => {
 
 const findInvalidCards = nestedArray => {
   for(let i = 0; i < nestedArray.length; i++){
-    let cred = validateCred(nestedArray[i]);
-    if (cred) {
+    let credNums = validateCred(nestedArray[i]);
+    if (credNums) {
       validCards.push(nestedArray[i]);
     } else {
       invalidCards.push(nestedArray[i]);
     }
   }; 
-  return ` Valid Cards: ${validCards}`;
+  return invalidCards;
 }
 
 findInvalidCards(batch);
